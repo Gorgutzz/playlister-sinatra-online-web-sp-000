@@ -1,8 +1,8 @@
-class CreateSongGenresJoinTable < ActiveRecord::Migration[5.2]
+class CreateSongs < ActiveRecord::Migration[5.2]
   def change
-    create_table :song_genres do |t|
-      t.string :song_id
-      t.string :genre_id
+    create_table :songs do |t|
+      t.string :name
+      t.string :artist_id
     end
   end
 end
