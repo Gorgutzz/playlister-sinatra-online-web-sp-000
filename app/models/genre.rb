@@ -3,7 +3,6 @@ class Genre < ActiveRecord::Base
   has_many :songs, through: :song_genres
   has_many :artists, through: :songs
 
-  #The gsub replaces spaces with hyphens, downcase makes it lowercase.
   def slug
     self.name.gsub(" ", "-").downcase
   end
