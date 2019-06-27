@@ -1,4 +1,23 @@
-<h3>Song Names:</h3>
-<% @songs.each do |song| %>
-  <h4><a href="/songs/<%= song.slug %>"><%= song.name%></a></h4>
-<% end %>
+<h3>Create a new Song</h3>
+<form action="/songs" method="post">
+
+  <label>Song Name:</label>
+  <input type="text" name="Name">
+
+  <br><br>
+
+  <label>Artist Name:</label>
+  <input type="text" name="Artist Name">
+
+  <br><br>
+
+  <label>Choose a Genre:</label>
+
+  <%@genres.each do |genre|%>
+      <input type="checkbox" name="genres[]" value="<%=genre.id%>" id="<%=genre.name%>"><%=genre.name%></input>
+  <%end%>
+  <br><br>
+
+  <input type="submit" name="submit" value="Create">
+
+</form>
